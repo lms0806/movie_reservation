@@ -1,4 +1,4 @@
-/* »ç¿ëÀÚ°ü·Ã µ¥ÀÌÅÍº£ÀÌ½º */
+/* ì‚¬ìš©ìê´€ë ¨ ë°ì´í„°ë² ì´ìŠ¤ */
 
 package Project;
 
@@ -24,20 +24,20 @@ public class DatabaseUser {
 	}
 	
 	private static Connection makeConnection() {
-		String url = "jdbc:mysql://localhost:3306/movie?serverTimezone=UTC";
-		String id = "root";
-		String password = "3510";
+		String url = "jdbc:mysql://localhost:****/movie?serverTimezone=UTC";
+		String id = "****";
+		String password = "*********";
 		Connection con = null;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("µå¶óÀÌ¹ö ÀûÀç ¼º°ø");
+			System.out.println("ë“œë¼ì´ë²„ ì ì¬ ì„±ê³µ");
 			con = DriverManager.getConnection(url, id, password);
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¼º°ø");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì„±ê³µ");
 		} catch(ClassNotFoundException e) {
-			System.out.println("µå¶óÀÌ¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ë“œë¼ì´ë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		} catch(SQLException e) {
-			System.out.println("¿¬°á¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+			System.out.println("ì—°ê²°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}
 		return con;
 	}
@@ -59,7 +59,7 @@ public class DatabaseUser {
 			}
 		} catch(SQLException e) {
 			result = "null";
-			//System.out.println("Á¸ÀçÇÏÁö¾Ê´Â ¾ÆÀÌµğÀÔ´Ï´Ù.");
+			//System.out.println("ì¡´ì¬í•˜ì§€ì•ŠëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.");
 			e.printStackTrace();
 		}	
 	}
@@ -67,7 +67,7 @@ public class DatabaseUser {
 	public static void insert(User user) {
 		try {
 			stmt.executeUpdate("INSERT INTO user VALUES ('" + user.getid() + "','" + user.getpassword() + "','" + user.getname() + "','" + user.getgender() + "'," + user.getphone() + "," + user.getpoint() + ")");
-			System.out.println("¾ÆÀÌµğ »ı¼º");
+			System.out.println("ì•„ì´ë”” ìƒì„±");
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
