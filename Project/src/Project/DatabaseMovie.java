@@ -1,4 +1,4 @@
-/* ¿µÈ­°ü·Ã µ¥ÀÌÅÍº£ÀÌ½º */
+/* ì˜í™”ê´€ë ¨ ë°ì´í„°ë² ì´ìŠ¤ */
 
 package Project;
 
@@ -33,20 +33,20 @@ public class DatabaseMovie {
 	}
 	
 	private static Connection makeConnection() {
-		String url = "jdbc:mysql://localhost:3306/movie?serverTimezone=UTC";
-		String id = "root";
-		String password = "3510";
+		String url = "jdbc:mysql://localhost:****/movie?serverTimezone=UTC";
+		String id = "****";
+		String password = "******";
 		Connection con = null;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("µå¶óÀÌ¹ö ÀûÀç ¼º°ø");
+			System.out.println("ë“œë¼ì´ë²„ ì ì¬ ì„±ê³µ");
 			con = DriverManager.getConnection(url, id, password);
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¼º°ø");
+			System.out.println("ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²° ì„±ê³µ");
 		} catch(ClassNotFoundException e) {
-			System.out.println("µå¶óÀÌ¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ë“œë¼ì´ë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		} catch(SQLException e) {
-			System.out.println("¿¬°á¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+			System.out.println("ì—°ê²°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}
 		return con;
 	}
